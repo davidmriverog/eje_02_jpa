@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Edicion de Pais</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            
+            <h:form>
+                <h1><h:outputText value="Editar Pais"/></h1> <br />
+                <p:link value="Ir al Inicio" outcome="index" />
+                <p:panelGrid columns="2">
+                    <p:outputLabel value="IdPais:" for="idPais" />
+                    <p:inputText id="idPais" readonly="true" value="#{paisController.p.idPais}" title="IdPais" required="true" requiredMessage="The IdPais field is required."/>
+                    <p:outputLabel value="NombrePais:" for="nombrePais" />
+                    <p:inputText id="nombrePais" value="#{paisController.p.nombrePais}" title="NombrePais" />
+                    
+                    <p:outputLabel value="Editar:" for="btn_editar" />
+                    <h:commandLink value="Editar Pais"
+                                   action="#{paisController.edit()}" 
+                                    id="btn_editar" />
+                </p:panelGrid>
+            </h:form>
+        </f:view>
+
+    </h:body>
+</html>
+
